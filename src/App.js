@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import Form from "./components/Form";
+import logo from './logo.png';
 import './App.css';
 
 function App() {
+  const [ state, setState ] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    errorMessage: "",
+  });
+
   return (
     <div className="App">
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1> Ejercicio Formulario - Hooks - Validación </h1>
       </header>
+
+      <h3> Escribe tus datos: </h3>
+      <Form inputs = {state} setInputs = {setState}/>
+
     </div>
   );
 }
 
 export default App;
+
